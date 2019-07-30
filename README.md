@@ -1,2 +1,4 @@
 # 30nichi_os
-OSを30日で作るマン
+- day1
+ - やったこと
+  - hello.imgを作成,qemuで実行
