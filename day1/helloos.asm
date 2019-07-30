@@ -19,7 +19,7 @@
     DD      0xffffffff      ; たぶんボリュームシリアル番号
     DB      "HELLO-OS   "   ; ディスクの名前                            (11Byte)
     DB      "FAT12   "      ; フォーマットの名前                        (8Byte)
-    RESB    18              ; とりあえず18バイト開けておく
+    TIMES   18   DB    0
 
 ; Program Main Body
 
@@ -36,13 +36,13 @@
     db      0x0a
     db      0
 
-    resb    0x1fe-($-$$)
+    times   0x1fe-($-$$) db 0
 
     db      0x55, 0xaa
 
 ; ブート以外の記述
 
     db      0xf0, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00
-    resb    4600
+    times   4600    db    0
     db      0xf0, 0xff, 0xff, 0x00, 0x00, 0x00, 0x00, 0x00
-    resb    1469432
+    times   1469432  db    0
