@@ -5,5 +5,3 @@
   - hello.imgを作成,qemuで実行
   - helloos.asmの作成,アセンブル
 
-## day2
-- やったこと
