@@ -1,6 +1,6 @@
 # 30nichi_os
 ## naskとNASMの違いについて
-[ここ](http://hrb.osask.jp/wiki/?tools/nask)が詳しい。
+[ここ](http://hrb.osask.jp/wiki/?tools/nask)を参考
 
 ## day1
 
@@ -21,6 +21,15 @@
         - JMP hoge で hoge と記述されている部分に飛ぶ
     - MOV命令
         - 代入の命令。MOV AX,0でAX=0;という代入文
+    - ADD命令
+        - ADD SI,1 ⇔ SI=SI+1;
+    - CMP命令
+        - CMP AL,0 ⇔ compare AL with 0
+    - JE命令
+        - CMP命令と合わせて使う
+        - CMP AL,0 JE fin ⇔ if(AL==0){goto fin};
+    - INT命令
+        - ソフトウェア割り込みの命令(詳しく勉強するのはあとで)
 - レジスタ
     - CPUにある記憶装置(16bit)
         - AX accumulator
@@ -41,3 +50,9 @@
 - メモリ
     - CPU外部の記憶装置
     - MOV AX,[SI]などと書くとき[]はメモリの場所を指定している
+    - MOV BYTE [678],123:メモリ678に数値123を覚えてもらう
+        - BYTEだと8bit
+        - MOV WORD [678],123 と書くと16bitで覚えてくれる
+            - "データの大きさ [番地]"で指定
+        - DWORDで4バイト(32bit)
+    - MOV AL,[SI] = MOV AL,BYTE [SI]　(SIの番地にあるメモリの内容をALに読み込め)
