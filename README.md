@@ -7,6 +7,9 @@
 - やったこと
   - hello.imgを作成,qemuで実行
   - helloos.asmの作成,アセンブル
+
+        ~$ yasm helloos.asm -o helloos.img
+        ~$ qemu-system-i386 -fda helloos.img
 - アセンブラについて
     - DB命令
         - ファイルの内容を1byteだけ直接書く命令
@@ -74,4 +77,7 @@
     - どうしてこんな中途半端なところに読み込み開始地点を置いたのか？
         - IBMやintelのおじさんが決めた(筆者談)
         - 人間は愚か
-    
+- Makefile  
+    - 特に困ることが無ければ使わないでいきたい
+
+## day3
